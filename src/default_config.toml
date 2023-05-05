@@ -1,0 +1,46 @@
+[base]
+secret_key = "insecure-tdh9c0e=7=e4x-m3rgas6om+$90!+@yve^e!xb-3$tdv6c%m=m"
+debug = true
+allowed_hosts = ["*"]
+script_name = ''
+csrf_trusted_origins = []
+
+[celery]
+broker_url = "redis://localhost:6379/2"
+task_time_limit = 3600
+visibility_timeout = 3600
+polling_interval = 1
+
+[database]
+name = "db1"
+user = "postgres"
+password = "pass"
+host = "localhost"
+port = 5432
+
+[timezone]
+name = "UTC"
+
+[email]
+backend = 'django.core.mail.backends.console.EmailBackend'
+user = "smtp-user"
+password = "smtp-password"
+use_ssl = true
+use_tls = false
+host = "smtp-host"
+port = 465
+sender = "Sender <user@example>"
+
+[storage]
+static_url = "/static/"
+media_url = "/media/"
+media_root = "cnd/media/"
+static_root = "cdn/static/"
+secure_links_secret = "insecure-mkjnhygtfdhgvjbknli"
+
+[sentry]
+dsn = ""
+environment = "dev"
+
+[i18n]
+language_code = 'en-en'
