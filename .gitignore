@@ -1,0 +1,7 @@
+*.pyc
+.idea
+/media/
+/static/
+venv
+config.toml
+
