@@ -1,3 +1,9 @@
 [tool.black]
 line-length = 79
 exclude = ".*/migrations/.*.py"
+
+[tool.isort]
+line_length = 79
+known_first_party = "apps"
+profile = "black"
+skip_glob = ["**/migrations/**.py"]
