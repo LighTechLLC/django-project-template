@@ -15,11 +15,6 @@ repos:
       - id: trailing-whitespace
         stages: [ commit ]
       - id: check-merge-conflict
-      - id: name-tests-test
-        args: [
-            --pytest-test-first
-        ]
-        stages: [ commit ]
 
   - repo: https://github.com/pycqa/isort
     rev: 5.12.0

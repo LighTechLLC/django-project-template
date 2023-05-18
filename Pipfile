@@ -20,6 +20,10 @@ redis = "*"
 black = "*"
 flake8 = "*"
 pre-commit = "*"
+pytest = "*"
+pytest-django = "*"
+faker = "*"
+factory-boy = "*"
 
 [requires]
 python_version = "3.10"
