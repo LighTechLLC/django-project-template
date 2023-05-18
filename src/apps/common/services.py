@@ -6,7 +6,7 @@ from django.db.models import Model
 
 
 def upload_file_handler_path(
-        base_path: str, instance: Model, filename: str
+    base_path: str, instance: Model, filename: str
 ) -> str:
     """
     The function implements saving files inside a predefined path prefix,

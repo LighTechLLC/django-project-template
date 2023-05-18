@@ -7,3 +7,8 @@ line_length = 79
 known_first_party = "apps"
 profile = "black"
 skip_glob = ["**/migrations/**.py"]
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "django_project.settings"
+python_files = ["test_*.py"]
+addopts = "--reuse-db"
