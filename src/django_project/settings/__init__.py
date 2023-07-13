@@ -13,6 +13,7 @@ settings_include(
     "swagger.py",
     "celery.py",
     "email.py",
+    "logging.py",
     "tests.py",
     "sentry.py",
     optional("local_settings.py"),
