@@ -4,6 +4,7 @@ debug = true
 allowed_hosts = ["*"]
 script_name = ''
 csrf_trusted_origins = []
+environment = "local"
 
 [celery]
 broker_url = "redis://localhost:6379/2"
@@ -40,7 +41,6 @@ secure_links_secret = "insecure-mkjnhygtfdhgvjbknli"
 
 [sentry]
 dsn = ""
-environment = "dev"
 
 [i18n]
 language_code = 'en-en'
