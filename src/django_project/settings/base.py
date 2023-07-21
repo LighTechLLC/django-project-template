@@ -17,10 +17,10 @@ SECRET_KEY = config["base"]["secret_key"]
 DEBUG = config["base"]["debug"]
 
 # env name: local / dev / stage / prod
-ENVIRONMENT_LOCAL = 'local'
-ENVIRONMENT_STAGE = 'stage'
-ENVIRONMENT_DEV = 'dev'
-ENVIRONMENT_PROD = 'production'
+ENVIRONMENT_LOCAL = "local"
+ENVIRONMENT_STAGE = "stage"
+ENVIRONMENT_DEV = "dev"
+ENVIRONMENT_PROD = "production"
 SUPPORTED_ENVIRONMENTS = [
     ENVIRONMENT_LOCAL,
     ENVIRONMENT_STAGE,
