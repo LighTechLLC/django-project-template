@@ -12,6 +12,9 @@ task_time_limit = 3600
 visibility_timeout = 3600
 polling_interval = 1
 
+[cache]
+location = "redis://localhost:6379/1"
+
 [database]
 name = "db1"
 user = "postgres"
