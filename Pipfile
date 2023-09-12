@@ -12,7 +12,7 @@ sentry-sdk = "==1.14.0"
 celery = "==5.2.6"
 django-filter = "*"
 drf-yasg = "*"
-psycopg2-binary = "*"
+psycopg2 = "*"
 pillow = "*"
 
 [dev-packages]
