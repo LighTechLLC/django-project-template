@@ -28,3 +28,7 @@ class UserManager(DjangoUserManager):
         user.password = make_password(password)
         user.save(using=self._db)
         return user
+
+    def get_by_natural_key(self, username):
+        ci_field = f"{self.model.USERNAME_FIELD}__iexact"
+        return self.get(**{ci_field: username})
