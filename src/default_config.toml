@@ -45,6 +45,7 @@ secure_links_secret = "insecure-mkjnhygtfdhgvjbknli"
 [sentry]
 dsn = ""
 auto_session_tracking = false
+traces_sample_rate = 0
 
 [i18n]
 language_code = 'en-en'
