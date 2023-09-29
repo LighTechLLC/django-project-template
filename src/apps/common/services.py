@@ -35,4 +35,4 @@ def prefix_based_upload_handler(path: str) -> partial:
         ....       upload_to=prefix_based_upload_handler('user/avatars')
         ....    )
     """
-    return partial(upload_file_handler_path, base_path=path)
+    return partial(upload_file_handler_path, path)
