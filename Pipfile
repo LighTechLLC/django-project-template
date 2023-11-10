@@ -5,13 +5,12 @@ name = "pypi"
 
 [packages]
 django = "==4.2.7"
-django-split-settings = "*"
+django-split-settings = "==1.2.0"
 djangorestframework = "==3.14.0"
 sentry-sdk = "==1.14.0"
 celery = "==5.3.4"
-django-filter = "23.3"
-psycopg2-binary = "*"
-pillow = "*"
+django-filter = "==23.3"
+pillow = "==10.1.0"
 
 [dev-packages]
 redis = "*"
