@@ -4,15 +4,13 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-django = "==4.2.1"
-toml = "*"
+django = "==4.2.7"
 django-split-settings = "*"
 djangorestframework = "==3.14.0"
 sentry-sdk = "==1.14.0"
-celery = "==5.2.6"
-django-filter = "*"
-drf-yasg = "*"
-psycopg2 = "*"
+celery = "==5.3.4"
+django-filter = "23.3"
+psycopg2-binary = "*"
 pillow = "*"
 
 [dev-packages]
@@ -26,4 +24,4 @@ faker = "*"
 factory-boy = "*"
 
 [requires]
-python_version = "3.10"
+python_version = "3.11"
