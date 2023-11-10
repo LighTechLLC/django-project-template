@@ -4,16 +4,14 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-django = "==4.2.1"
-toml = "*"
-django-split-settings = "*"
+django = "==4.2.7"
+django-split-settings = "==1.2.0"
 djangorestframework = "==3.14.0"
 sentry-sdk = "==1.14.0"
-celery = "==5.2.6"
-django-filter = "*"
-drf-yasg = "*"
-psycopg2 = "*"
-pillow = "*"
+celery = "==5.3.4"
+django-filter = "==23.3"
+pillow = "==10.1.0"
+psycopg2 = "==2.9.9"
 
 [dev-packages]
 redis = "*"
@@ -24,6 +22,7 @@ pytest = "*"
 pytest-django = "*"
 faker = "*"
 factory-boy = "*"
+isort = "*"
 
 [requires]
-python_version = "3.10"
+python_version = "3.11"

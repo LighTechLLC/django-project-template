@@ -1,6 +1,5 @@
+import tomllib
 from pathlib import Path
-
-import toml
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
@@ -10,8 +9,8 @@ CONFIG_FILE = BASE_DIR / "config.toml"
 if not CONFIG_FILE.exists():
     CONFIG_FILE = BASE_DIR / "default_config.toml"
 
-with open(CONFIG_FILE, "r") as f:
-    config = toml.load(f)
+with open(CONFIG_FILE, "rb") as f:
+    config = tomllib.load(f)
 
 SECRET_KEY = config["base"]["secret_key"]
 DEBUG = config["base"]["debug"]
@@ -72,4 +71,4 @@ FORCE_SCRIPT_NAME = config["base"]["script_name"]
 if FORCE_SCRIPT_NAME:
     SESSION_COOKIE_PATH = f"{FORCE_SCRIPT_NAME}/"
 
-SILENCED_SYSTEM_CHECKS = ["auth.W004"]
+SILENCED_SYSTEM_CHECKS = ["auth.E003"]
