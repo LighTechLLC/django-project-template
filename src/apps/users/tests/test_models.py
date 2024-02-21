@@ -1,8 +1,7 @@
 import pytest
 from django.db import IntegrityError
 
-from apps.users.models import User
-
+from ..models import User
 
 @pytest.mark.django_db
 class TestUser:
