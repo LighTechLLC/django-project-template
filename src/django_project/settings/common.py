@@ -1,32 +1,6 @@
-import tomllib
-from pathlib import Path
-
-BASE_DIR = Path(__file__).resolve().parent.parent.parent
-
-# toml config file set up
-CONFIG_FILE = BASE_DIR / "config.toml"
-
-if not CONFIG_FILE.exists():
-    CONFIG_FILE = BASE_DIR / "default_config.toml"
-
-with open(CONFIG_FILE, "rb") as f:
-    config = tomllib.load(f)
-
-SECRET_KEY = config["base"]["secret_key"]
 DEBUG = config["base"]["debug"]
 
-# env name: local / dev / stage / prod
-ENVIRONMENT_LOCAL = "local"
-ENVIRONMENT_STAGE = "stage"
-ENVIRONMENT_DEV = "dev"
-ENVIRONMENT_PROD = "production"
-SUPPORTED_ENVIRONMENTS = [
-    ENVIRONMENT_LOCAL,
-    ENVIRONMENT_STAGE,
-    ENVIRONMENT_DEV,
-    ENVIRONMENT_PROD,
-]
-ENVIRONMENT = config["base"]["environment"]
+SECRET_KEY = config["base"]["secret_key"]
 
 ALLOWED_HOSTS = config["base"]["allowed_hosts"]
 
