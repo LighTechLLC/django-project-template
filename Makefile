@@ -7,7 +7,7 @@ test:
 	pipenv run python src/manage.py test
 
 run:
-	pipenv run python src/manage.py runserver
+	pipenv run python src/manage.py runserver 0:8000
 
 lint:
 	pipenv run black src/
@@ -16,9 +16,6 @@ lint:
 
 shell:
 	pipenv run python src/manage.py shell
-
-runserver:
-	pipenv run python src/manage.py runserver 0.0.0.0:8000
 
 reinstall:
 	pipenv --rm && pipenv sync --dev
