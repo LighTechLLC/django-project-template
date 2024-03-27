@@ -19,8 +19,8 @@ with open(CONFIG_FILE, "rb") as f:
 
 # list of supported environments
 ENVIRONMENT_LOCAL = "local"
-ENVIRONMENT_STAGE = "stage"
 ENVIRONMENT_DEV = "dev"
+ENVIRONMENT_STAGE = "stage"
 ENVIRONMENT_PROD = "production"
 SUPPORTED_ENVIRONMENTS = [
     ENVIRONMENT_LOCAL,
