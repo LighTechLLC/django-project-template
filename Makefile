@@ -10,6 +10,8 @@ run:
 	pipenv run python src/manage.py runserver
 
 lint:
+	pipenv run black src/
+	pipenv run isort src/
 	pipenv run flake8 src/
 
 shell:
