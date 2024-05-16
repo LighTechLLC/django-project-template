@@ -15,15 +15,15 @@ psycopg2 = {version = "==2.9.9", markers = "sys_platform == 'linux' or sys_platf
 psycopg2-binary = {version = "==2.9.9", markers = "sys_platform == 'darwin'"}
 
 [dev-packages]
-redis = "*"
-black = "*"
-flake8 = "*"
-pre-commit = "*"
+redis = "==5.0.4"
+black = "==24.4.2"
+flake8 = "==7.0.0"
+pre-commit = "==3.7.1"
+isort = "==5.13.2"
 pytest = "*"
 pytest-django = "*"
 faker = "*"
 factory-boy = "*"
-isort = "*"
 
 [requires]
 python_version = "3.11"
