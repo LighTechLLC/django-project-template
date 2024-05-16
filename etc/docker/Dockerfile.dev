@@ -1,0 +1,14 @@
+FROM python:3.11.9-slim
+
+WORKDIR /app
+
+COPY Pipfile Pipfile.lock /app/
+RUN pip install pipenv gunicorn && pipenv install --deploy --system --dev
+
+COPY src/ /app/
+
+ENV PORT=8080
+ENV WEB_CONCURRENCY=1
+
+EXPOSE ${PORT}
+CMD ["gunicorn", "django_project.wsgi:application", "--timeout", "30", "--max-requests", "65536", "--max-requests-jitter", "200", "--access-logfile", "-", "--capture-output"]
