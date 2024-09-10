@@ -1,0 +1,37 @@
+services:
+  db:
+    image: postgres:15.2
+    restart: always
+    container_name: postgres
+    environment:
+      - POSTGRES_DB
+      - POSTGRES_USER
+      - POSTGRES_PASSWORD
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    healthcheck:
+      test: [ "CMD", "pg_isready", "-q", "-d", "db", "-U", "app" ]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    network_mode: "host"
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "500m"
+
+  redis:
+    image: redis:alpine
+    container_name: redis
+    restart: always
+    expose:
+      - 6379
+    network_mode: "host"
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "100m"
+
+volumes:
+  db_data:
+    external: true
