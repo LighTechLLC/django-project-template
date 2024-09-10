@@ -1,5 +1,9 @@
 DEBUG = config["base"]["debug"]
 
+# preventing DEBUG mode for non-local environment
+if DEBUG and ENVIRONMENT != ENVIRONMENT_LOCAL:
+    raise ValueError("DEBUG mode should be disabled for non-local environment")
+
 SECRET_KEY = config["base"]["secret_key"]
 
 ALLOWED_HOSTS = config["base"]["allowed_hosts"]
