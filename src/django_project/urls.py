@@ -5,21 +5,19 @@ from django.urls import include, path
 
 urlpatterns = [
     path("admin/", admin.site.urls),
+    path("api/", include(("services.api.urls", "api"), namespace="api")),
 ]
-
-if settings.ENVIRONMENT == settings.ENVIRONMENT_LOCAL:
-    # enabling media files serving for local env
-    urlpatterns += static(
-        settings.MEDIA_URL, document_root=settings.MEDIA_ROOT
-    )
-
+# disabled for non-debug mode or non-local prefix
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 if settings.ENVIRONMENT not in [
     settings.ENVIRONMENT_PROD,
     settings.ENVIRONMENT_STAGE,
 ]:
     # enabling drf auth for swagger in case it's not stage/production env
-    urlpatterns += static(
-        "rest-auth/",
-        include("rest_framework.urls", namespace="rest_framework"),
-    )
+    urlpatterns += [
+        path(
+            "rest-auth/",
+            include("rest_framework.urls", namespace="rest_framework"),
+        )
+    ]
