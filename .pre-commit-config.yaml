@@ -24,7 +24,7 @@ repos:
         args: [ --check-only ]
 
   - repo: https://github.com/psf/black
-    rev: 24.4.2
+    rev: 24.8.0
     hooks:
       - id: black
         name: black (python)
@@ -37,7 +37,7 @@ repos:
         args: [ -ll ]
 
   - repo: https://github.com/PyCQA/flake8
-    rev: 7.0.0
+    rev: 7.1.1
     hooks:
       - id: flake8
         name: flake8 (python)
