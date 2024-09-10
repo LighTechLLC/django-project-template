@@ -1,10 +1,10 @@
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": [
-        "apps.user_auth.authentication.CustomOAuth2Authentication"
+        "oauth2_provider.contrib.rest_framework.OAuth2Authentication"
     ],
-    "DEFAULT_PERMISSION_CLASSES": (
-        "services.api.common.permissions.HasRequiredPermission",
-    ),
+    "DEFAULT_PERMISSION_CLASSES": [
+        "rest_framework.permissions.IsAuthenticated",
+    ],
     "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.LimitOffsetPagination",
     "PAGE_SIZE": 10,
     "DEFAULT_FILTER_BACKENDS": [
@@ -16,7 +16,7 @@ REST_FRAMEWORK = {
     ],
 }
 
-if ENVIRONMENT != ENVIRONMENT_PROD:
+if ENVIRONMENT not in [ENVIRONMENT_PROD, ENVIRONMENT_STAGE]:
     REST_FRAMEWORK["DEFAULT_RENDERER_CLASSES"] = [
         "rest_framework.renderers.JSONRenderer",
         "rest_framework.renderers.BrowsableAPIRenderer",
