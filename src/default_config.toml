@@ -40,7 +40,6 @@ static_url = "/static/"
 media_url = "/media/"
 media_root = "cdn/media/"
 static_root = "cdn/static/"
-secure_links_secret = "insecure-mkjnhygtfdhgvjbknli"
 
 [sentry]
 dsn = ""
