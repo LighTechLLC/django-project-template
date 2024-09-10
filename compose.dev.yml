@@ -4,7 +4,9 @@ services:
       dockerfile: etc/docker/Dockerfile.dev
       context: .
     restart: always
-    env_file: .env
+    environment:
+      - PORT
+      - WEB_CONCURRENCY
     volumes:
       - ./src/:/app/
       - ./cdn/static/:/cdn/static/
