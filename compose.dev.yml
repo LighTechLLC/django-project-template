@@ -1,0 +1,34 @@
+services:
+  backend:
+    build:
+      dockerfile: etc/docker/Dockerfile.dev
+      context: .
+    restart: always
+    environment:
+      - PORT
+      - WEB_CONCURRENCY
+    volumes:
+      - ./src/:/app/
+      - ./cdn/static/:/cdn/static/
+      - ./cdn/media/:/cdn/media/
+    network_mode: "host"
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "500m"
+
+  celery:
+    build:
+      dockerfile: etc/docker/Dockerfile.dev
+      context: .
+    restart: always
+    command: bash -c "celery -A django_project.celery.app worker -B -l INFO -Q celery"
+    volumes:
+      - ./src/:/app/
+      - ./cdn/static/:/cdn/static/
+      - ./cdn/media/:/cdn/media/
+    network_mode: "host"
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "500m"

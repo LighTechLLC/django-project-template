@@ -44,7 +44,7 @@ settings_include(
     "i18n.py",
     "tz.py",
     "storage.py",
-    "rest.py",
+    "rest_framework.py",
     "swagger.py",
     "celery.py",
     "email.py",
