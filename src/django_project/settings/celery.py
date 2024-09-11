@@ -10,6 +10,7 @@ CELERY_BROKER_TRANSPORT_OPTIONS = {
 }
 
 CELERY_BEAT_SCHEDULE = {}
+# TODO: add autodiscover probably using fixup
 CELERY_IMPORTS = [
     "services.celery_tasks.dummy",
 ]
