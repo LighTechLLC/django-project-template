@@ -1,6 +1,10 @@
-FROM python:3.11.9-slim
+FROM python:3.12.11-slim
 
 WORKDIR /app
+
+RUN apt update -y && \
+    apt install -y libpq-dev libssl-dev libcurl4-openssl-dev gcc pkg-config && \
+    rm -rf /var/cache/apt/lists
 
 COPY Pipfile Pipfile.lock /app/
 RUN pip install pipenv gunicorn && pipenv install --deploy --system
