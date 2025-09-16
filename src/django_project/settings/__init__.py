@@ -40,6 +40,7 @@ settings_include(
     "common.py",
     "installed_apps.py",
     "auth.py",
+    "cache.py",
     "database.py",
     "i18n.py",
     "tz.py",
